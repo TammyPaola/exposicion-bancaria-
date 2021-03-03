@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body> 
+       <style>
+           body {
+    background-color:lightcoral
+}
+
+       </style>
+<h1><center> Transacciones </center></h1>
+ <form action="/inicio" method="POST">
+<h6><label>Cuenta a acreditar </label><br><h6><select name="n_cuenta" id="cuenta"></h6>
+ {{#each datos}}
+</br>
+ <option value="{{this.id}}">{{this.n_cuenta}}</option>
+ {{/each}}
+ </select>
+ <label>saldo de credito </label><select  id="saldo"> 
+ {{#each datos}}
+ <option value="{{this.saldo}}">{{this.saldo}}</option>
+ {{/each}}
+ </select>
+<br>
+<label>Cuenta a debitar </label><br><select name="" id="cuenta1"> 
+ {{#each datos}}
+ <option value="{{this.id}}">{{this.n_cuenta}}</option>
+ {{/each}}
+ </select>
+
+<label>saldo de debito </label><select id="saldo1"> 
+ {{#each datos}}
+ <option value="{{this.saldo}}">{{this.saldo}}</option>
+ {{/each}}
+ </select>
+ <br>
+<label>saldo a tranferir</label><input id="monto1" type="text" name="saldo">
+<br>
+<label> Mensaje </label><input id="Mensaje" type="text" name="descripcion">
+
+<br>
+ <h5><button type= "submit" id= "boton" onclick="matematica.mensaje1()" > transferir sin error</button></h5>
+ </form>
+
+ <form action="/inicio1" method="POST">
+ <br>
+ <h5><button type="submit" id= "boton" onclick="matematica.mensaje2()" > transferir con  error</button></h5>
+ </form>
+<script src="/js/calculo.js"></script>
+
+</body>
+</html>
